@@ -31,4 +31,4 @@ yarn-debug.log*
 .yarn-integrity
 
 # Don't want to share my secrets
-# /another_secret/
+/another_secret/
