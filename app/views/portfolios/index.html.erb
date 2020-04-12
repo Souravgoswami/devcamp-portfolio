@@ -6,5 +6,5 @@
 	<p><%= x.body %></p>
 	<img src="<%= x.thumb_image %>">
 	<br>
-	<%= method(:image_tag) === x.main_image %>
+	<%= method(:image_tag) === x.main_image.to_s %>
 <% end %>
