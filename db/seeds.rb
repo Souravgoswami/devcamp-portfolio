@@ -25,8 +25,8 @@ puts 'Created 5 Skills'
 		title: "Portfolio #{ x }",
 		subtitle: "My Great Service",
 		body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-		main_image: "https://pixabay.com/get/57e0d2414250ad14ead18d78c72a3578083edbed555575417d2b7a.jpg",
-		thumb_image: "https://pixabay.com/get/57e0d2414250ad14f1dc8460ce21327e173dd8f85254794f712b73dc914b_640.jpg"
+		main_image: "https://i.imgur.com/vQfNBFJ.gif",
+		thumb_image: "https://i.imgur.com/DXOkOtm.jpg"
 	)
 end
 puts "Created 9 Portfolios"
