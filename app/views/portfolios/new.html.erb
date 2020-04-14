@@ -7,8 +7,23 @@
 	</div>
 
 	<div class="field">
-		<% f.label :body %>
-		<% f.text_area :body %>
+		<%= f.label :subtitle %>
+		<%= f.text_field :subtitle %>
+	</div>
+
+	<div class="field">
+		<%= f.label :body %>
+		<%= f.text_area :body %>
+	</div>
+
+	<div class="field">
+		<%= f.label 'Main Image:' %>
+		<%= f.text_field :main_image %>
+	</div>
+
+	<div class="field">
+		<%= f.label 'Thumb Image:' %>
+		<%= f.text_field :thumb_image%>
 	</div>
 
 	<div class="actions">

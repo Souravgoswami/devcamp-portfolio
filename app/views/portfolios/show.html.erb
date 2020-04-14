@@ -1,0 +1,9 @@
+<h1><%= @item.title %></h1>
+
+<%= @item.body %>
+<%= image_tag @item.thumb_image %>
+<%= image_tag @item.main_image %>
+
+<br>
+<%#= link_to 'Edit',  edit_portfolio_path(@path) %>
+<%= link_to 'Back', portfolios_path %>
