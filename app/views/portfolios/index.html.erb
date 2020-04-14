@@ -1,9 +1,10 @@
-<center><h1>Portfolio Items</h1></center>
-<p><%= new_portfolio_url %></p>
+<center>
+	<h1>Portfolio Items</h1>
+	<p><%= portfolios_url %></p>
+	<p><%= link_to 'Create', new_portfolio_path %></p>
+</center>
 
 <%# <a href="/portfolios/new">Create a New Item</a> %>
-
-<%= link_to 'Create a New Item', new_portfolio_path %>
 
 <% @portfolio_items .each_with_index do |x, i| %>
 	<h2><%= link_to "#{i + 1}. #{x.title}", portfolio_path(x) %></h2>
