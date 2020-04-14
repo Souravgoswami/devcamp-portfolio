@@ -5,5 +5,5 @@
 <%= image_tag @item.main_image %>
 
 <br>
-<%#= link_to 'Edit',  edit_portfolio_path(@path) %>
+<%= link_to 'Edit',  edit_portfolio_path(@item.id) %>
 <%= link_to 'Back', portfolios_path %>

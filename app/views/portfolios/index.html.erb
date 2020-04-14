@@ -1,10 +1,16 @@
-<h1>Portfolio Items</h1>
+<center><h1>Portfolio Items</h1></center>
+<p><%= new_portfolio_url %></p>
 
-<% @portfolio_items .each do |x| %>
-	<p><%= x.title %></p>
+<%# <a href="/portfolios/new">Create a New Item</a> %>
+
+<%= link_to 'Create a New Item', new_portfolio_path %>
+
+<% @portfolio_items .each_with_index do |x, i| %>
+	<p><h2><%= "#{i + 1}. #{x.title}" %></h2></p>
 	<p><%= x.subtitle %></p>
 	<p><%= x.body %></p>
 	<img src="<%= x.thumb_image %>">
 	<br>
 	<%= method(:image_tag) === x.main_image.to_s %>
+	<%= link_to 'Edit', edit_portfolio_path(x.id) %>
 <% end %>
