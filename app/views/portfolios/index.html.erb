@@ -7,7 +7,7 @@
 <%# <a href="/portfolios/new">Create a New Item</a> %>
 
 <% @portfolio_items .each_with_index do |x, i| %>
-	<h2><%= link_to "#{i + 1}. #{x.title}", portfolio_path(x) %></h2>
+	<h2><%= link_to "#{i + 1}. #{x.title}", portfolio_show_path(x) %></h2>
 	<p><%= x.subtitle %></p>
 	<p><%= x.body.to_s.then { |b| b.length > 99 ? "#{b[0..99].strip}..." : b } %></p>
 	<img src="<%= x.thumb_image %>">
