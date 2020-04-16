@@ -45,3 +45,6 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'irb', require: false
+gem 'rdoc', require: false
+
+gem 'friendly_id', '~> 5.3.0'
