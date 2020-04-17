@@ -28,7 +28,7 @@ class PortfoliosController < ApplicationController
 
 		respond_to do |fmt|
 			if @portfolio_item.update(params.require(:portfolio).permit(:title,  :subtitle, :body))
-				fmt.html { redirect_to @portfolio_item, notice: 'The record was successfully updated' }
+				fmt.html { redirect_to portfolios_path, notice: 'The record was successfully updated' }
 			else
 				fmt.html { render :edit }
 			end
