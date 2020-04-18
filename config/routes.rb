@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   # get 'pages/about'
   # get 'pages/contact'
 
+  get 'rails-items', to: 'portfolios#rails'
+  get 'angular-items', to: 'portfolios#angular', as: 'angular'
 
   get 'about-me', to: 'pages#about'
   get 'contact', to: 'pages#contact'

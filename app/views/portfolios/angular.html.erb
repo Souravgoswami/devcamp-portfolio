@@ -1,0 +1,10 @@
+<center><h1>Topic Rails</h1></center>
+
+<% for i in @portfolio_items %>
+	<center><a href=""><%= i.title %></a></center>
+	<center><a href=""><%= i.subtitle %></a></center>
+	<br>
+	<p><img src="<%= i.thumb_image %>"></p>
+	<p><%= i.body.length > 99 ? "#{ i.body[0..99] }..." : i.body %></p>
+	<hr>
+<% end %>
