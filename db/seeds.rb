@@ -45,5 +45,17 @@ Portfolio.create!(
 	main_image: "https://i.imgur.com/oTC6K8S.jpg",
 	thumb_image: "https://i.imgur.com/t3avudb.jpg"
 )
-
 puts "Created 9 Portfolios"
+
+3.times do |x|
+	# Technology.create!(
+	# 	name: "Technology #{ x + 1 }",
+	# 	portfolio_id: Portfolio.last.id
+	# )
+
+	Portfolio.last.technologies.create!(
+		name: "Technology #{ x + 1 }",
+		portfolio_id: Portfolio.last.id
+	)
+end
+puts 'Created 3 Technologies'
