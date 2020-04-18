@@ -1,14 +1,33 @@
 class PortfoliosController < ApplicationController
 	def index
+		# @portfolio_items = Portfolio.angular #.where(subtitle: 'Angular')
+		# @portfolio_items =Portfolio.rails
 		@portfolio_items = Portfolio.all
+	end
+
+	def angular
+		@portfolio_items = Portfolio.angular
+	end
+
+	def rails
+		@portfolio_items = Portfolio.rails
 	end
 
 	def new
 		@portfolio_item = Portfolio.new
+
+		3.times do
+			@portfolio_item.technologies.build
+		end
 	end
 
 	def create
-		@portfolio_item = Portfolio.new(params.require(:portfolio).permit(:title, :body))
+		@portfolio_item = Portfolio.new(
+			params.require(:portfolio).permit(
+				:title, :subtitle, :body, :main_image, :thumb_image,
+				technologies_attributes: [:name]
+			)
+		)
 
 		respond_to do |fmt|
 			if @portfolio_item.save
@@ -28,7 +47,7 @@ class PortfoliosController < ApplicationController
 
 		respond_to do |fmt|
 			if @portfolio_item.update(params.require(:portfolio).permit(:title,  :subtitle, :body))
-				fmt.html { redirect_to @portfolio_item, notice: 'The record was successfully updated' }
+				fmt.html { redirect_to portfolios_path, notice: 'The record was successfully updated' }
 			else
 				fmt.html { render :edit }
 			end
