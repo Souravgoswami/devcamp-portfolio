@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :users
+  # devise_for :users
   resources :portfolios, except: [:show]
   get 'portfolio/:id', to: 'portfolios#show', as: 'portfolio_show'
   # get 'pages/home'
@@ -10,8 +12,6 @@ Rails.application.routes.draw do
 
   get 'about-me', to: 'pages#about'
   get 'contact', to: 'pages#contact'
-  resources :education2s
-  resources :educations
   # resources :blogs
 
   resources(:blogs) do
