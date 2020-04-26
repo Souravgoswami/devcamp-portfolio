@@ -48,3 +48,4 @@ gem 'irb', require: false
 gem 'rdoc', require: false
 
 gem 'friendly_id', '~> 5.3.0'
+gem 'devise', '~> 4.7', '>= 4.7.1'
