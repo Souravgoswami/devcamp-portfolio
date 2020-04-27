@@ -77,6 +77,10 @@ class BlogsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def blog_params
+      # config.action_controller.permit_all_parameters = true
+      # Can be added
+      # to /config/application.rb
+      # In order to remove permit() with the cost of compromising security
       params.require(:blog).permit(:title, :body)
     end
 end

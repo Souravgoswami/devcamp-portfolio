@@ -8,7 +8,16 @@
 <%= link_to 'Back', portfolios_path %>
 <%= link_to 'Delete Portfolio Item', @item, method: :delete, data: { confirm: 'Are you Sure?' } %>
 
-<h2>Technologies Used</h2>
-<% @item.technologies.each do |t| %>
-	<%= t.name %>
+ <% unless @item.technologies.empty? %>
+	<h2>Technologies Used</h2>
+	<% @item.technologies.each do |t| %>
+		<%= t.name %>
+	<% end %>
 <% end %>
+
+<hr>
+
+<%= params %>
+
+<%# <hr> %>
+<%#= session.inspect %>
