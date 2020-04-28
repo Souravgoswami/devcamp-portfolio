@@ -1,4 +1,6 @@
 class PortfoliosController < ApplicationController
+	layout 'portfolio'
+
 	def index
 		# @portfolio_items = Portfolio.angular #.where(subtitle: 'Angular')
 		# @portfolio_items =Portfolio.rails
