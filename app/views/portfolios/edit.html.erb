@@ -1,22 +1,3 @@
 <h1>Edit this Portflio Item</h1>
 
-<%= form_for(@portfolio_item) do |pi| %>
-	<div class="field">
-		<%= pi.label :title %>
-		<%= pi.text_field :title %>
-	</div>
-
-	<div class="field">
-		<%= pi.label :subtitle %>
-		<%= pi.text_field :subtitle %>
-	</div>
-
-	<div class="field">
-		<%= pi.label :body %>
-		<%= pi.text_area :body %>
-	</div>
-
-	<div class="actions">
-		<%= pi.submit %>
-	</div>
-<% end %>
+<%= render 'form', portfolio_item: @portfolio_item %>
