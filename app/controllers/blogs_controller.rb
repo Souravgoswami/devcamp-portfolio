@@ -32,9 +32,11 @@ class BlogsController < ApplicationController
   # POST /blogs.json
   def create
     @blog = Blog.new(blog_params)
+    @blog.topic_id = Topic.last.id unless params[:topic_id]
 
     respond_to do |format|
       if @blog.save
+
         format.html { redirect_to @blog, notice: 'Your post is now live!' }
         # format.json { render :show, status: :created, location: @blog }
       else
@@ -85,6 +87,6 @@ class BlogsController < ApplicationController
       # Can be added
       # to /config/application.rb
       # In order to remove permit() with the cost of compromising security
-      params.require(:blog).permit(:title, :body)
+      params.require(:blog).permit(:title, :body, :topic_id)
     end
 end
