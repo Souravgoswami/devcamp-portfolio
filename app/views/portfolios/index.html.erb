@@ -4,4 +4,4 @@
 	<p><%= link_to 'Create', new_portfolio_path %></p>
 </center>
 
-<%= render partial: 'portfolio_item', collection: @portfolio_items %>
+<%= render partial: 'portfolio_item', collection: @portfolio_items, as: :x %>

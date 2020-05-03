@@ -1,6 +1,6 @@
-<h2><%= link_to "#{portfolio_item.title}", portfolio_show_path(portfolio_item) %></h2>
+<h2><%= link_to "#{x.title}", portfolio_show_path(x) %></h2>
 
-<p><%= portfolio_item.subtitle %></p>
-<p><%= portfolio_item.body.to_s.then { |b| b.length > 99 ? "#{b[0..99].strip}..." : b } %></p>
-<img src="<%= portfolio_item.thumb_image %>">
+<p><%= x.subtitle %></p>
+<p><%= x.body.to_s.then { |b| b.length > 99 ? "#{b[0..99].strip}..." : b } %></p>
+<img src="<%= x.thumb_image %>">
 <br>

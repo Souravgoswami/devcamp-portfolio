@@ -1,16 +1,16 @@
-<h1><%= @item.title.to_s %></h1>
+<h1><%=@portfolio_item.title.to_s %></h1>
 
-<%= image_tag @item.main_image.to_s %>
-<%= @item.body.to_s %>
+<%= image_tag@portfolio_item.main_image.to_s %>
+<%=@portfolio_item.body.to_s %>
 
 <br>
-<%= link_to 'Edit',  edit_portfolio_path(@item.id) %>
+<%= link_to 'Edit',  edit_portfolio_path(@portfolio_item.id) %>
 <%= link_to 'Back', portfolios_path %>
-<%= link_to 'Delete Portfolio Item', @item, method: :delete, data: { confirm: 'Are you Sure?' } %>
+<%= link_to 'Delete Portfolio Item',@portfolio_item, method: :delete, data: { confirm: 'Are you Sure?' } %>
 
- <% unless @item.technologies.empty? %>
+ <% unless@portfolio_item.technologies.empty? %>
 	<h2>Technologies Used</h2>
-	<% @item.technologies.each do |t| %>
+	<% @portfolio_item.technologies.each do |t| %>
 		<%= t.name %>
 	<% end %>
 <% end %>

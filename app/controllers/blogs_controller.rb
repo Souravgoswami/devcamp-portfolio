@@ -5,9 +5,8 @@ class BlogsController < ApplicationController
   # GET /blogs
   # GET /blogs.json
   def index
-    @blogs = Blog.all
+    @blogs = Blog.special_blogs
     @page_title = "My Portfolio Blog".freeze
-
     # show random number of items
     # @blogs = Blog.limit(rand(1..3))
   end
