@@ -19,4 +19,8 @@ module ApplicationHelper
   			content_tag(:p, greeting, class: 'source-greeting')
 		end
 	end
+
+	def copyright_generator
+		DevcampViewTool123456::Renderer.copyright('sourav goswami', 'all rights reserved').html_safe
+	end
 end
