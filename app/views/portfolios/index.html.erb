@@ -1,7 +1,10 @@
 <center>
 	<h1>Portfolio Items</h1>
 	<p><%= portfolios_url %></p>
-	<p><%= link_to 'Create', new_portfolio_path %></p>
+
+	<% if logged_in?(:site_admin) %>
+		<p><%= link_to 'Create', new_portfolio_path %></p>
+	<% end %>
 </center>
 
 <%= render partial: 'portfolio_item', collection: @portfolio_items, as: :x %>

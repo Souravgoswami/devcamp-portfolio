@@ -7,4 +7,7 @@
 	<p><img src="<%= i.thumb_image %>"></p>
 	<p><%= i.body.length > 99 ? "#{ i.body[0..99] }..." : i.body %></p>
 	<hr>
+
+	<%= link_to 'Edit', edit_portfolio_path(i) if logged_in?(:site_admin) %>
+	<%= link_to 'Delete portfolio item', postfolio_path(i), method: :delete, data: { confirm: 'Are you sure?' } if logged_in?(:site_admin) %>
 <% end %>
