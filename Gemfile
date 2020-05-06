@@ -53,4 +53,5 @@ gem 'pry'
 
 gem "bootstrap", "~> 4.4"
 
-gem 'devcamp_view_tool123456', git: 'https://github.com/Souravgoswami/devcamp_view_tool123456.git'
+# gem 'devcamp_view_tool123456', git: 'https://github.com/Souravgoswami/devcamp_view_tool123456.git'
+gem 'devcamp_view_tool123456', '~> 0.1.0'
