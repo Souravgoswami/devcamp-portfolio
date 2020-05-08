@@ -51,8 +51,7 @@ gem 'friendly_id', '~> 5.3.0'
 gem 'devise', '~> 4.7', '>= 4.7.1'
 gem 'pry'
 
-gem "bootstrap", "~> 4.4"
-
 # gem 'devcamp_view_tool123456', git: 'https://github.com/Souravgoswami/devcamp_view_tool123456.git'
 gem 'devcamp_view_tool123456', '~> 0.1.0'
 gem 'petergate', '~> 2.0', '>= 2.0.1'
+gem 'sprockets-rails', '~> 3.0', '>= 3.0.4'
