@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 	<a class="navbar-brand" href="#">Navbar</a>
 
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -7,11 +7,12 @@
 
 	<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 		<div class="navbar-nav ml-auto">
-			<%= link_to "Home", root_path, class: 'nav-link active nav-item'%>
+			<%= link_to "Home", root_path, class: 'nav-link nav-item'%>
 			<%= link_to "About Me", about_me_path, class: 'nav-link nav-item'%>
 			<%= link_to "Contact", contact_path, class: 'nav-link nav-item'%>
 			<%= link_to "Blog", blogs_path, class: 'nav-link nav-item'%>
 			<%= link_to "Portfolio", portfolios_path, class: 'nav-link nav-item'%>
+			<%= login_helper 'nav-link' %>
 		</div>
 	</div>
 </nav>

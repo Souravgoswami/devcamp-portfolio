@@ -1,3 +1,30 @@
 body {
+	background-color: #222 !important ;
+	color: #fff !important ;
 	margin: 0 ;
+}
+
+.mastfoot .inner p {
+	color: #f55 ;
+	display: block ;
+	position: absolute ;
+	left: 0 ;
+	bottom: 0 ;
+	left: 50% ;
+	transform: translate(-50%) ;
+}
+
+.yield-wrapper {
+	color: #fff ;
+	margin-top: 2vh ;
+	position: absolute ;
+	width: 50% ;
+	top: 50% ;
+	left: 50% ;
+	transform: translate(-50%, -50%) ;
+	text-align: center ;
+}
+
+.navbar {
+	z-index: 10 ;
 }
