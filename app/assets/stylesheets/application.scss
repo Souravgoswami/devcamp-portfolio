@@ -5,7 +5,7 @@ body {
 }
 
 .mastfoot .inner p {
-	color: #f55 ;
+	color: #fff ;
 	display: block ;
 }
 
@@ -20,4 +20,34 @@ body {
 
 .navbar {
 	z-index: 10 ;
+}
+
+.card {
+	color: #000 !important ;
+	text-align: left ;
+}
+
+.auth-links a {
+	color: #55f ;
+	text-decoration: none ;
+}
+
+.auth-links {
+	a {
+		color: #55f ;
+		text-decoration: none ;
+		padding: 10px ;
+		background-color: transparent ;
+		border: 2px solid #55f ;
+		border-radius: 4px ;
+		transition: all 0.2s ease ;
+
+	}
+
+	a:hover, a:focus {
+		color: #fff ;
+		text-decoration: none ;
+		background-color: #55f ;
+		border-color: #88f ;
+	}
 }
