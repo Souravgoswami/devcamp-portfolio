@@ -27,27 +27,30 @@ body {
 	text-align: left ;
 }
 
-.auth-links a {
-	color: #55f ;
-	text-decoration: none ;
+.w-40 {
+	margin: 15vh auto 15vh auto ;
+	width: 40% ;
+	padding: 20px ;
 }
 
 .auth-links {
-	a {
-		color: #55f ;
-		text-decoration: none ;
-		padding: 10px ;
-		background-color: transparent ;
-		border: 2px solid #55f ;
-		border-radius: 4px ;
-		transition: all 0.2s ease ;
+	margin-bottom: 16px ;
+}
 
-	}
+.btn-warning {
+	color: #fff !important ;
+}
 
-	a:hover, a:focus {
-		color: #fff ;
-		text-decoration: none ;
-		background-color: #55f ;
-		border-color: #88f ;
+.btn-outline-warning {
+	&:hover, &:focus {
+		color: #fff !important ;
 	}
+}
+
+.no-border {
+	border: none !important ;
+}
+
+.btn {
+	min-width: 100px ;
 }
