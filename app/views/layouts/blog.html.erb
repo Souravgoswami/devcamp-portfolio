@@ -1,27 +1,75 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= @page_title %></title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+	<head>
+		<title><%= @page_title %></title>
+		<meta charset="utf-8">
+		<meta name="keywords" content="<%= @seo_keywords %>">
 
-   <meta name="keywords" content="<%= @seo_keywords %>">
-
-    <%= stylesheet_link_tag 'blogs', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-
-  <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-
-    <%= yield %>
-
-    <%= render 'shared/nav', location: 'bottom' %>
-    <%= login_helper %>
-
-  <%= source_helper('blog') %>
+		<%= csrf_meta_tags %>
+		<%= csp_meta_tag %>
 
 
-  </body>
+		<%= stylesheet_link_tag 'blogs', media: 'all', 'data-turbolinks-track': 'reload' %>
+		<%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+	</head>
+
+	<body>
+		<nav class="navbar navbar-expand-lg navbar-default navbar-fixed-top navbar-dark bg-dark">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="#">Sourav Goswami</a>
+
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
+				<%# Start of Nav %>
+				<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+					<div class="navbar-nav ml-auto">
+						<%= link_to "Home", root_path, class: 'nav-link nav-item'%>
+						<%= link_to "About Me", about_me_path, class: 'nav-link nav-item'%>
+						<%= link_to "Contact", contact_path, class: 'nav-link nav-item'%>
+						<%= link_to "Blog", blogs_path, class: 'nav-link nav-item'%>
+						<%= link_to "Portfolio", portfolios_path, class: 'nav-link nav-item'%>
+						<%= login_helper 'nav-link' %>
+					</div>
+				</div>
+			</div>
+		</nav>
+		<%# End of Nav %>
+
+		<%# Start of Blog header %>
+		<div class="blog-header">
+			<div class="container-fluid">
+				<h1 class="blog-title">The Bootstrap Blog</h1>
+				<p class="lead blog-description">An example blog template built with bootstrap</p>
+			</div>
+		</div>
+		<%# End of Blog header %>
+
+		<%# Start of container and row elements %>
+		<div class="container">
+			<div class="row">
+				<p class="notice"><%= notice %></p>
+				<p class="alert"><%= alert %></p>
+
+				<%= yield %>
+
+				<%= render('shared/nav', location: 'bottom') %>
+				<%= source_helper('blog') %>
+			</div>
+		</div>
+		<%# End of container and row elements %>
+
+		<%# Start of footer %>
+		<footer class="blog-footer">
+			<p>Hello footer!</a>.</p>
+			<p>
+				<a href="#">Back to top</a>
+			</p>
+		</footer>
+		<%# End of footer %>
+	</div>
+
+
+	</body>
 </html>
