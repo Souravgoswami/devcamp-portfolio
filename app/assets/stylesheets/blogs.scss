@@ -30,6 +30,7 @@ h1, h2, h3, h4, h5, h6 {
 .display-4 {
   font-size: 2.5rem;
 }
+
 @media (min-width: 768px) {
   .display-4 {
     font-size: 3rem;
@@ -85,9 +86,6 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 2rem;
 }
 
-/*
- * Blog posts
- */
 .blog-post {
   margin-bottom: 4rem;
 }
