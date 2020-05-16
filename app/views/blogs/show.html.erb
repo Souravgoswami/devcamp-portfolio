@@ -1,17 +1,18 @@
-<p id="notice"><%= notice %></p>
+<main role="main" class="container">
+	<div class="row">
+		<div class="col-md-8 blog-main">
+			<h2><%= @blog.title %></h2>
+			<% if logged_in?(:site_admin) %>
+				<%= link_to 'Edit', edit_blog_path(@blog) %>
+			<% end %>
 
-<p>
-  <strong>Title:</strong>
-  <%= @blog.title %>
-</p>
+			<p><%= @blog.body %></p>
 
-<p>
-  <strong>Body:</strong>
-  <%= @blog.body %>
-</p>
-
-<% if logged_in?(:site_admin) %>
-  <%= link_to 'Edit', edit_blog_path(@blog) %> |
-<% end %>
-
-<%= link_to 'Back', blogs_path %>
+			<nav class="blog-pagination">
+				<a class="btn btn-outline-primary" href="#">Older</a>
+				<a class="btn btn-outline-secondary disabled" href="#">Newer</a>
+			</nav>
+		</div>
+	</div>
+	<%= link_to 'Back', blogs_path %>
+</main>
