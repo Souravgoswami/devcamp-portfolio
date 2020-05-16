@@ -1,9 +1,21 @@
-<tr>
-	<td><%= blog.title.to_s.upcase %></td>
-	<td><%= distance_of_time_in_words(blog.created_at, Time.now) %> ago</td>
-	<td><%= blog.body.length > 99 ? "#{blog.body[0..99]}..." : blog.body %></td>
-	<td><%= link_to blog.status.to_s, toggle_status_blog_path(blog) %></td>
-	<td><%= link_to 'Show', blog %></td>
-	<td><%= link_to 'Edit', edit_blog_path(blog) if logged_in?(:site_admin) %></td>
-	<td><%= link_to 'Delete Post', blog, method: :delete, data: { confirm: 'Are you sure?' } if logged_in?(:site_admin)%></td>
-</tr>
+<div class="blog-post">
+	<h2 class="blog-post-title"><%= link_to blog.title.to_s.capitalize, blog %></h2>
+	<p class="blog-post-meta">Published <%= distance_of_time_in_words(blog.created_at, Time.now) %> ago</p>
+	<p class="blog-post-meta">By <a href="#">Mark</a>
+
+	<p class="blog-post-meta">
+		<td><%= link_to 'Show', blog %></td>
+	</p>
+
+	<% if logged_in?(:site_admin) %>
+		<p class="blog-post-meta">
+			<%= link_to 'Edit', edit_blog_path(blog) %> /
+			<%= link_to blog.status.to_s.capitalize, toggle_status_blog_path(blog) %> /
+			<%= link_to 'Delete Post', blog, method: :delete, data: { confirm: 'Are you sure?' } %>
+		</p>
+	<% end %>
+
+	<p>
+		<%= blog.body %>
+	</p>
+</div>

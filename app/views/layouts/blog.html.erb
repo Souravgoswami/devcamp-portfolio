@@ -8,7 +8,6 @@
 		<%= csrf_meta_tags %>
 		<%= csp_meta_tag %>
 
-
 		<%= stylesheet_link_tag 'blogs', media: 'all', 'data-turbolinks-track': 'reload' %>
 		<%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 	</head>
@@ -19,36 +18,59 @@
 		<%# Start of Blog header %>
 		<div class="blog-header">
 			<div class="container-fluid">
-				<h1 class="blog-title">The Bootstrap Blog</h1>
+				<h1 class="blog-title">My Blog</h1>
 				<p class="lead blog-description">An example blog template built with bootstrap</p>
+				<%= link_to 'Write a New Blog', new_blog_path if logged_in?(:site_admin)%>
 			</div>
 		</div>
 		<%# End of Blog header %>
 
-		<%# Start of container and row elements %>
-		<div class="container">
+		<div role="main" class="container">
+			<p class="notice"><%= notice %></p>
+			<p class="alert"><%= alert %></p>
+
 			<div class="row">
-				<p class="notice"><%= notice %></p>
-				<p class="alert"><%= alert %></p>
 
-				<%= yield %>
+				<div class="col-md-8 blog-main">
+					<%= yield %>
+				</div>
 
-				<%= render('shared/nav', location: 'bottom') %>
-				<%= source_helper('blog') %>
+				<aside class="col-md-4 blog-sidebar">
+					<div class="p-3 mb-3 bg-light rounded">
+						<h4 class="font-italic">About</h4>
+						<p class="mb-0">Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+					</div>
+
+					<div class="p-3">
+						<h4 class="font-italic">Archives</h4>
+						<ol class="list-unstyled mb-0">
+							<li><a href="#">March 2014</a></li>
+							<li><a href="#">February 2014</a></li>
+							<li><a href="#">January 2014</a></li>
+							<li><a href="#">December 2013</a></li>
+							<li><a href="#">November 2013</a></li>
+							<li><a href="#">October 2013</a></li>
+							<li><a href="#">September 2013</a></li>
+							<li><a href="#">August 2013</a></li>
+							<li><a href="#">July 2013</a></li>
+							<li><a href="#">June 2013</a></li>
+							<li><a href="#">May 2013</a></li>
+							<li><a href="#">April 2013</a></li>
+						</ol>
+					</div>
+
+					<div class="p-3">
+						<h4 class="font-italic">Elsewhere</h4>
+						<ol class="list-unstyled">
+							<li><a href="#">GitHub</a></li>
+							<li><a href="#">Twitter</a></li>
+							<li><a href="#">Facebook</a></li>
+						</ol>
+					</div>
+				</aside>
 			</div>
 		</div>
-		<%# End of container and row elements %>
-
-		<%# Start of footer %>
-		<footer class="blog-footer">
-			<p>Hello footer!</a>.</p>
-			<p>
-				<a href="#">Back to top</a>
-			</p>
-		</footer>
-		<%# End of footer %>
-	</div>
-
-
+		<%= render('shared/nav', location: 'bottom') %>
+		<%= source_helper('blog') %>
 	</body>
 </html>
