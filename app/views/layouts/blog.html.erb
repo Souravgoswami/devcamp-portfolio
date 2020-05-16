@@ -14,16 +14,7 @@
 
 	<body>
 		<%= render('shared/blog_nav') %>
-
-		<%# Start of Blog header %>
-		<div class="blog-header">
-			<div class="container-fluid">
-				<h1 class="blog-title">My Blog</h1>
-				<p class="lead blog-description">An example blog template built with bootstrap</p>
-				<%= link_to 'Write a New Blog', new_blog_path if logged_in?(:site_admin)%>
-			</div>
-		</div>
-		<%# End of Blog header %>
+		<%= render('shared/blog_masthead') %>
 
 		<div role="main" class="container">
 			<p class="notice"><%= notice %></p>
@@ -35,10 +26,11 @@
 				</div>
 
 				<%= render('shared/blog_sidebar') %>
-
 			</div>
 		</div>
-		<%= render('shared/nav', location: 'bottom') %>
+
+		<%= render('shared/blog_footer') %>
+
 		<%= source_helper('blog') %>
 	</body>
 </html>

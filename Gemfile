@@ -55,3 +55,5 @@ gem 'pry'
 gem 'devcamp_view_tool123456', '~> 0.1.0'
 gem 'petergate', '~> 2.0', '>= 2.0.1'
 gem 'sprockets-rails', '~> 3.0', '>= 3.0.4'
+
+gem "kaminari", "~> 1.2"
