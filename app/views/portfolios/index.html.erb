@@ -7,4 +7,13 @@
 	<% end %>
 </center>
 
-<%= render partial: 'portfolio_item', collection: @portfolio_items, as: :x %>
+
+<main role="main">
+	<div class="album py-5 bg-light">
+		<div class="container">
+			<div class="row">
+				<%= render partial: 'portfolio_item', collection: @portfolio_items, as: :x %>
+			</div>
+		</div>
+	</div>
+</main>
