@@ -43,3 +43,14 @@ footer {
 footer p {
   margin-bottom: .25rem;
 }
+
+.links {
+	color: #fff ;
+	text-decoration: none ;
+	transition: all 0.25s ease ;
+}
+
+.links:hover {
+	color: #fa0 ;
+	text-decoration: none ;
+}
