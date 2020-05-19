@@ -1,7 +1,4 @@
 <center>
-	<h1>Portfolio Items</h1>
-	<p><%= portfolios_url %></p>
-
 	<% if logged_in?(:site_admin) %>
 		<p><%= link_to 'Create', new_portfolio_path %></p>
 	<% end %>
