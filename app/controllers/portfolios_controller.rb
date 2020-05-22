@@ -6,7 +6,10 @@ class PortfoliosController < ApplicationController
 	def index
 		# @portfolio_items = Portfolio.angular #.where(subtitle: 'Angular')
 		# @portfolio_items =Portfolio.rails
-		@portfolio_items = Portfolio.all
+		# @portfolio_items = Portfolio.all
+
+		# @portfolio_items = Portfolio.order('position ASC')
+		@portfolio_items = Portfolio.by_position
 	end
 
 	def angular
