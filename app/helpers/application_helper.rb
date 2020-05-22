@@ -23,4 +23,22 @@ module ApplicationHelper
 	def copyright_generator
 		DevcampViewTool123456::Renderer.copyright('sourav goswami', 'all rights reserved').html_safe
 	end
+
+	def nav_items(style, tag_type)
+		[root_path, about_me_path, contact_path, blogs_path, portfolios_path].zip(
+			'Home * About Me * Contact * Blogs * Portfolios * Logout'.split(?*)
+		).map do |x|
+			<<~EOF.tap(&:strip!)
+				<#{tag_type}><a href="#{x[0]}" class="#{style} #{active?(x[0])}">#{x[1]}</a></#{tag_type}>
+			EOF
+		end
+	end
+
+	def nav_helper(style, tag_type)
+		nav_items(style, tag_type).join.html_safe
+	end
+
+	def active?(path)
+		'active' if current_page? path
+	end
 end

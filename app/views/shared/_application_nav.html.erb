@@ -8,12 +8,7 @@
 
 		<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 			<div class="navbar-nav ml-auto">
-				<%= link_to "Home", root_path, class: 'nav-link nav-item'%>
-				<%= link_to "About Me", about_me_path, class: 'nav-link nav-item'%>
-				<%= link_to "Contact", contact_path, class: 'nav-link nav-item'%>
-				<%= link_to "Blog", blogs_path, class: 'nav-link nav-item'%>
-				<%= link_to "Portfolio", portfolios_path, class: 'nav-link nav-item'%>
-				<%= login_helper 'nav-link' %>
+				<%= nav_helper 'nav-link', 'span' %>
 			</div>
 		</div>
 	</div>
