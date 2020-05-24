@@ -1,12 +1,15 @@
 class PortfoliosController < ApplicationController
 	layout 'portfolio'
-	before_action :set_portfolio_item, only: [:edit, :show, :update, :destroy]
-	access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :edit]}, site_admin: :all
+	before_action :set_portfolio_item, only: [:edit, :show, :update, :destroy, :move]
+	access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :edit, :move]}, site_admin: :all
 
 	def index
 		# @portfolio_items = Portfolio.angular #.where(subtitle: 'Angular')
 		# @portfolio_items =Portfolio.rails
-		@portfolio_items = Portfolio.all
+		# @portfolio_items = Portfolio.all
+
+		# @portfolio_items = Portfolio.order('position ASC')
+		@portfolio_items = Portfolio.by_position
 	end
 
 	def angular
@@ -62,7 +65,12 @@ class PortfoliosController < ApplicationController
 		end
 	end
 
+	def move
+		@portfolio_item.insert_at(params[:position].to_i)
+	end
+
 	private
+
 	def portfolio_params
 		params.require(:portfolio).permit(
 			:title, :subtitle, :body, :main_image, :thumb_image,

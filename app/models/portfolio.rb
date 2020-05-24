@@ -1,5 +1,12 @@
 class Portfolio < ApplicationRecord
 	include Placeholder
+
+	# bundle add acts_as_list
+	# yarn add sortablejs stimulus
+	# modify /app/javascript/controllers/drag_controller.js
+	# Add acts_as_list
+	acts_as_list
+
 	has_many :technologies
 
 	validates_presence_of :title, :body, :main_image, :thumb_image
@@ -8,6 +15,10 @@ class Portfolio < ApplicationRecord
 
 	def self.angular
 		where(subtitle: 'Angular')
+	end
+
+	def self.by_position
+		self.order('position ASC')
 	end
 
 	scope(

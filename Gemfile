@@ -8,7 +8,7 @@ gem 'rails', '~> 6.0.2', '>= 6.0.2.2'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
-gem 'puma', '~> 4.1'
+gem 'puma', '~> 4.3.5'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
@@ -57,3 +57,5 @@ gem 'petergate', '~> 2.0', '>= 2.0.1'
 gem 'sprockets-rails', '~> 3.0', '>= 3.0.4'
 
 gem "kaminari", "~> 1.2"
+
+gem "acts_as_list", "~> 1.0"

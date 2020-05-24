@@ -26,12 +26,12 @@ module ApplicationHelper
 
 	def nav_items(style, tag_type)
 		[root_path, about_me_path, contact_path, blogs_path, portfolios_path].zip(
-			'Home * About Me * Contact * Blogs * Portfolios * Logout'.split(?*)
+			'Home * About Me * Contact * Blogs * Portfolios'.split(?*)
 		).map do |x|
 			<<~EOF.tap(&:strip!)
 				<#{tag_type}><a href="#{x[0]}" class="#{style} #{active?(x[0])}">#{x[1]}</a></#{tag_type}>
 			EOF
-		end
+		end << login_helper(style)
 	end
 
 	def nav_helper(style, tag_type)
