@@ -56,6 +56,8 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
       zeitwerk (~> 2.2, >= 2.2.2)
+    acts_as_list (1.0.1)
+      activerecord (>= 4.2)
     bcrypt (3.1.13)
     bindex (0.8.1)
     bootsnap (1.4.6)
@@ -217,6 +219,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  acts_as_list (~> 1.0)
   bootsnap (>= 1.4.2)
   byebug
   devcamp_view_tool123456 (~> 0.1.0)
@@ -229,7 +232,7 @@ DEPENDENCIES
   petergate (~> 2.0, >= 2.0.1)
   pg (>= 0.18, < 2.0)
   pry
-  puma (~> 4.1)
+  puma (~> 4.3.5)
   rails (~> 6.0.2, >= 6.0.2.2)
   rdoc
   sass-rails (>= 6)
