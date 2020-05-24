@@ -22,10 +22,9 @@ export default class extends Controller {
 
     Rails.ajax({
       // url: this.data.get('url').replace(':id', id),
-      url: `${id}/move`,
+      url: `/portfolios/${id}/move`,
       type: 'PATCH',
       data: data
     })
-
   }
 }
