@@ -2,7 +2,8 @@ class Portfolio < ApplicationRecord
 	include Placeholder
 
 	# bundle add acts_as_list
-	# yarn add sortablejs stimulus
+	# yarn add sortablejs
+	# rails webpacker:install:stimulus
 	# modify /app/javascript/controllers/drag_controller.js
 	# Add acts_as_list
 	acts_as_list
