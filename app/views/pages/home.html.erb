@@ -1,1 +1,16 @@
-<%= render 'shared/cover_layout' %>
+<%= render 'shared/cover_layout' do %>
+	<div class="yield-wrapper">
+		<div class="w-50">
+			<h1 class="head-drop-shadowed">Welcome</h1>
+
+			<p class="text-shadow-2">
+			Software development should not be a secret process,
+			when I take aon a new project I make it my goal to not
+			only deliver a well crafted product but to also ensure
+			each stage of the process is fully communicated.
+			</p>
+			<br>
+			<%= link_to '', about_me_path, class: 'btn-outline-light-animated', 'data-content': 'About Me' %>
+		</div>
+	</div>
+<% end %>

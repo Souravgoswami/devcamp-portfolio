@@ -1,1 +1,17 @@
-<%= render 'shared/cover_layout', content: 'With some programming experience. Loves languages like Ruby and Crystal. Knows Ruby, Crystal, Python, C, JavaScript.' %>
+<%= render 'shared/cover_layout' do %>
+	<div class="row">
+		<div class="col-md-4">
+			<%= image_tag 'dog.jpg', width: '200px', class: 'img-fluid img-thumbnail rounded shadow' %>
+		</div>
+
+		<div class="col-md-8">
+			<p class="lead">
+				My name is sourav goswami.
+			</p>
+
+			<center>
+				<%= link_to 'Learn More', about_me_path, class: 'btn btn-success', id: 'learn-more' %></p>
+			</center>
+		</div>
+	</div>
+<% end %>

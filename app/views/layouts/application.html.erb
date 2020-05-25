@@ -15,6 +15,9 @@
 
 
   <body>
+    <div id="background">
+    </div>
+
     <div class="site-wrapper">
       <div class="site-wrapper-inner">
         <div class="cover-container">
@@ -33,9 +36,11 @@
 
           <%= source_helper('application') %>
 
-          <%= render('shared/application_footer') %>
         </div>
       </div>
     </div>
+          <div class="footer">
+            <%= render('shared/application_footer') %>
+          </div>
   </body>
 </html>
