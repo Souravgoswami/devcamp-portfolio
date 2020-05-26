@@ -23,5 +23,3 @@ $(
 // ; (ctx => ctx.keys().forEach(ctx))(require.context('.', true, /\.js$/))
 
 import "controllers"
-import Rails from '@rails/ujs'
-Rails.start()

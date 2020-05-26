@@ -15,7 +15,18 @@
 
 
   <body>
-    <div id="background">
+    <%# <div id="background">
+    </div> %>
+
+    <div class="video-wrapper">
+    <%= video_tag(
+        'busy_morning_street.mp4', id: 'background',
+        autoplay: true,
+        loop: true,
+        muted: true,
+        poster: 'bg.jpg'
+      )
+    %>
     </div>
 
     <div class="site-wrapper">
