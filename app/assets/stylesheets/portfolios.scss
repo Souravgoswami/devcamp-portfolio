@@ -2,8 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 body {
-	color: #fa0 ;
-	background-color: transparent ;
+	color: #000 ;
 }
 
 .top a {
@@ -16,6 +15,11 @@ body {
   margin-bottom: 0;
   background-color: #fff;
 }
+
+.container {
+  color: #000 ;
+}
+
 @media (min-width: 768px) {
   .jumbotron {
     padding-top: 6rem;
@@ -58,4 +62,70 @@ footer p {
 // Custom Styles //
 .portfolio-form {
  padding: 20px ;
+}
+
+.portfolio-img-tag  {
+  width: 100% ;
+  height: 100% ;
+  position: relative ;
+  opacity: 1 ;
+  overflow: hidden ;
+
+  &::before {
+    content: '' ;
+    position: absolute ;
+    top: 0 ;
+    left: 0 ;
+    z-index: 1 ;
+    background-color: #000 ;
+    width: 100% ;
+    height: 100% ;
+    opacity: 0.5 ;
+    transform: translateY(-100%) ;
+    transition: all 0.25s ease ;
+  }
+
+  &:hover::before {
+    transform: translateY(0) ;
+  }
+
+
+  &:hover .portfolio-img {
+    transform: rotate(9deg) scale(1.25) ;
+  }
+
+  &:hover .portfolio-img-tag-label {
+    transform: translate(-50%, -50%) ;
+    opacity: 1 ;
+  }
+}
+
+.portfolio-img {
+  transform: rotate(0) scale(1) ;
+  width: 100% ;
+  object-fit: cover ;
+  height: 40vh ;
+  overflow: hidden ;
+  transition: all 0.25s ease ;
+}
+
+.portfolio-img-tag-label {
+  position: absolute ;
+  top: 50% ;
+  left: 50% ;
+  z-index: 1 ;
+  transform: translate(-50%, -125%) ;
+  color: #fff ;
+  font-family: alice ;
+  font-size: 24px ;
+  text-shadow: 0 2px 2px #000 ;
+  text-align: center ;
+  transition: all 0.25s ease 0.125s ;
+  margin: auto ;
+  opacity: 0 ;
+}
+
+.img-crop {
+  display: hidden ;
+  object-fit: cover ;
 }

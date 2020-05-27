@@ -1,4 +1,16 @@
-<%= form_for(@portfolio_item) do |f| %>
+<%= form_with(model: portfolio_item, local: true) do |f| %>
+	<% if portfolio_item.errors.any? %>
+		<div id="error_explanation">
+			<h2><%= pluralize(portfolio_item.errors.count, "error") %> prohibited this portfolio_item from being saved:</h2>
+
+			<ul>
+				<% portfolio_item.errors.full_messages.each do |message| %>
+					<li><%= message %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+
 	<div class="row">
 		<div class="col-md-6">
 			<div class="form-group">
@@ -21,13 +33,11 @@
 
 		<div class="col-md-12">
 			<div class="form-group">
-				<%= f.label 'Main Image:' %>
-				<%= f.text_field :main_image, class: 'form-control' %>
+				<%= f.file_field :main_image %>
 			</div>
 
 			<div class="form-group">
-				<%= f.label 'Thumb Image:' %>
-				<%= f.text_field :thumb_image, class: 'form-control' %>
+				<%= f.file_field :thumb_image %>
 			</div>
 		</div>
 	</div>

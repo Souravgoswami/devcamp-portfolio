@@ -14,6 +14,9 @@ class Portfolio < ApplicationRecord
 	after_initialize :set_defaults
 	accepts_nested_attributes_for :technologies, reject_if: -> attrs { attrs['name'].blank? }
 
+	mount_uploader :thumb_image, PortfolioUploader
+	mount_uploader :main_image, PortfolioUploader
+
 	def self.angular
 		where(subtitle: 'Angular')
 	end
@@ -29,7 +32,6 @@ class Portfolio < ApplicationRecord
 	)
 
 	def set_defaults
-		# self.main_image ||= Placeholder.image_generator(height: 640, width: 480)
 		self.main_image ||= "https://i.imgur.com/vQfNBFJ.gif".freeze
 		self.thumb_image ||= "https://i.imgur.com/DXOkOtm.jpg".freeze
 	end
