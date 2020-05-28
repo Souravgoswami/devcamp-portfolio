@@ -20,6 +20,14 @@
 				<% @portfolio_item.technologies.each do |t| %>
 					<%= t.name %>
 				<% end %>
+
+				<% if logged_in?(:site_admin) %>
+					<div class="col-md-12">
+						<center>
+							<%= link_to '', edit_portfolio_path(@portfolio_item), class: 'btn-outline-warning-animated', 'data-content': 'Edit Technologies' %>
+						</center>
+					</div>
+				<% end %>
 			<% end %>
 
 			<hr>
