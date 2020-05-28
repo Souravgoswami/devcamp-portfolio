@@ -3,7 +3,7 @@
 		<%= link_to portfolio_show_path(x), class: 'img-crop' do %>
 			<div class="portfolio-img-tag">
 				<center><span class="portfolio-img-tag-label">Read more</span></center>
-				<%= image_tag x.thumb_image.url, class: 'portfolio-img' %>
+				<%= image_tag portfolio_img(x.thumb_image.url, 'thumb'), class: 'portfolio-img' %>
 			</div>
 		<% end %>
 

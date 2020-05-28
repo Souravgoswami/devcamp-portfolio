@@ -8,4 +8,19 @@ module PortfoliosHelper
 			link_to("Login", new_user_session_path, class: style)
 		end
 	end
+
+	def image_generator(width:, height:)
+		"https://placehold.it/#{height}x#{width}"
+	end
+
+	def portfolio_img(img, type)
+		if img || img &.model &.main_image? || img &.model &.thumb_image?
+			img
+		elsif type == 'thumb'
+			image_generator(height: '300', width: '300')
+		else
+			image_generator(width: '500', height: '500')
+		end
+
+	end
 end
