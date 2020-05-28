@@ -1,9 +1,7 @@
 <div class="yield-wrapper">
 	<div class="nested-yield">
 		<main role="main" class="inner cover">
-			<h1 class="cover-heading">Cover your page.</h1>
-			<p class="lead"><%= content if defined?(content) %> </p>
-			<p class="lead"><%= link_to 'Learn More', about_me_path, class: 'btn btn-lg btn-secondary' %></p>
+			<%= yield %>
 		</main>
 	</div>
 </div>

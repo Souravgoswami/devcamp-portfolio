@@ -59,3 +59,11 @@ gem 'sprockets-rails', '~> 3.0', '>= 3.0.4'
 gem "kaminari", "~> 1.2"
 
 gem "acts_as_list", "~> 1.0"
+
+gem "carrierwave", "~> 2.1"
+
+gem "mini_magick", "~> 4.10"
+
+gem "carrierwave-aws", "~> 1.5"
+
+gem "dotenv-rails", "~> 2.7"

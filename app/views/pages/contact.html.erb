@@ -1,13 +1,17 @@
-<%= render 'shared/cover_layout' %>
+<%= render 'shared/cover_layout' do %>
+	<div class="yield-wrapper">
+		<h1 class="head-drop-shadowed">Hello!</h1>
+		<h3 class="head-drop-shadowed">Would you like to work together?</h3>
+		<hr>
 
-<div class="contact-wrapper fademe">
-	<center>
-		<p><%= number_to_phone "+919830123456" %></p>
-		<p><%= number_to_currency "15000" %></p>
-		<p><%= number_to_percentage 80.423 %></p>
-		<p><%= number_with_delimiter 123456789 %></p>
-		<p><%= link_to 'Email', 'mailto:sg97@protonmail.com' %></p>
+		<div class="row text-shadow-2">
+			<div class="col-md-4">
+				<p><%= number_with_delimiter 123456789 %></p>
+				<p><%= link_to 'Email', 'mailto:sg97@protonmail.com' %></p>
+			</div>
 
-		<iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10264.475300694867!2d88.39249290644771!3d22.66028737884824!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f89c2cc26dce7b%3A0x96394937c2ddaee0!2sBelgharia%20Station%20Rd%2C%20Kolkata%2C%20West%20Bengal!5e0!3m2!1sen!2sin!4v1589039161655!5m2!1sen!2sin" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-	</center>
-</div>
+			<div class="col-md-8">
+				<iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10264.475300694867!2d88.39249290644771!3d22.66028737884824!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f89c2cc26dce7b%3A0x96394937c2ddaee0!2sBelgharia%20Station%20Rd%2C%20Kolkata%2C%20West%20Bengal!5e0!3m2!1sen!2sin!4v1589039161655!5m2!1sen!2sin" allowfullscreen="true" tabindex="0"></iframe>
+			</div>
+	</div>
+<% end %>
