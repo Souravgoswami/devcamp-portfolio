@@ -21,6 +21,5 @@ module PortfoliosHelper
 		else
 			image_generator(width: '500', height: '500')
 		end
-
 	end
 end

@@ -105,6 +105,7 @@ footer p {
   width: 100% ;
   object-fit: cover ;
   height: 40vh ;
+  margin-top: 2% ;
   overflow: hidden ;
   transition: all 0.25s ease ;
 }
@@ -123,9 +124,4 @@ footer p {
   transition: all 0.25s ease 0.125s ;
   margin: auto ;
   opacity: 0 ;
-}
-
-.img-crop {
-  display: hidden ;
-  object-fit: cover ;
 }

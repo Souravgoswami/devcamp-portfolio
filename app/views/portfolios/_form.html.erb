@@ -48,11 +48,12 @@
 
 	<h2>Technologies Used</h2>
 	<%= f.fields_for :technologies do |tf| %>
-		<div class="form-group">
-			<%= tf.label :name %>
-			<%= tf.text_field :name, class: 'form-control' %>
-		</div>
+		<%= render 'technology_fields', f: tf %>
 	<% end %>
+
+	<div>
+		<%= link_to_add_association 'Add Technology', f, :technologies %>
+	</div>
 
 	<div class="actions">
 		<%= f.submit 'Save Portfolio Item', class: 'btn btn-outline-primary btn-block' %>

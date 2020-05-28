@@ -1,32 +1,43 @@
-<%= form_with(model: blog, local: true) do |form| %>
-	<% if blog.errors.any? %>
-		<div id="error_explanation">
-			<h2><%= pluralize(blog.errors.count, "error") %> prohibited this blog from being saved:</h2>
+<%# form_tag Tag %>
 
-			<ul>
-				<% blog.errors.full_messages.each do |message| %>
-					<li><%= message %></li>
-				<% end %>
-			</ul>
+<%
+=begin %>
+	<%= form_tag(blogs_path, method: 'post') do %>
+		<div class="form-group">
+			<%= label_tag 'blog[title]', 'Blog Title' %>
+			<%= text_field_tag 'blog[title]', blog.title, class: 'form-control' %>
+		</div>
+
+		<div class="form-group">
+			<%= label_tag 'blog[body]', 'Body' %>
+			<%= text_area_tag 'blog[body]', blog.body, class: 'form-control', rows: 15 %>
+		</div>
+
+		<div class="form-group">
+			<label class="btn-outline-primary-animated" data-content="Save">
+				<%= submit_tag 'Save', style: 'display: none' %>
+			</label>
 		</div>
 	<% end %>
+<%
+=end %>
 
-	<div class="form-group">
-		<%= form.label :title %>
-		<%= form.text_field :title, class: 'form-control' %>
-	</div>
+<%# form_for tag %>
 
-	<div class="form-group">
-		<%= form.label :body %>
-		<%= form.text_area :body, class: 'form-control', rows: 15 %>
-	</div>
+<%= form_for(blog) do |f| %>
+		<div class="form-group">
+			<%= f.label :title, 'Blog Title' %>
+			<%= f.text_field :title, class: 'form-control', placeholder: 'Title' %>
+		</div>
 
-	<div class="form-group">
-		<%= form.label :topic_id %>
-		<%= form.text_field :topic_id, class: 'form-control' %>
-	</div>
+		<div class="form-group">
+			<%= f.label :body, 'Body' %>
+			<%= f.text_area :body, class: 'form-control', rows: 15, placeholder: 'Content' %>
+		</div>
 
-	<div class="actions">
-		<%= form.submit 'Submit', class: 'btn btn-primary' %>
-	</div>
+		<div class="form-group">
+			<label class="btn-outline-primary-animated" data-content="Save">
+				<%= f.submit 'Save', style: 'display: none' %>
+			</label>
+		</div>
 <% end %>
