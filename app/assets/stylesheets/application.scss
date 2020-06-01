@@ -1,7 +1,10 @@
 html, body {
 	height: 100% ;
-	margin: 0 ;
 	color: #fff !important ;
+}
+
+body {
+	padding-top: 65px ;
 }
 
 .mastfoot .inner p {
@@ -28,12 +31,6 @@ html, body {
 .card {
 	color: #000 !important ;
 	text-align: left ;
-}
-
-.w-40 {
-	margin: 0 ;
-	width: 40% ;
-	padding: 20px ;
 }
 
 .auth-links {
@@ -79,7 +76,7 @@ html, body {
 }
 
 #background {
-	position: absolute ;
+	position: fixed ;
 	margin: auto ;
 	filter: blur(4px) ;
 	object-fit: fill ;
@@ -88,17 +85,17 @@ html, body {
 	z-index: 1000 ;
 }
 
-// #background::before {
-// 	content: '' ;
-// 	position: fixed ;
-// 	top: 0 ;
-// 	left: 0 ;
-// 	width: 100vw ;
-// 	height: 100vh ;
-// 	z-index: -1000 ;
-// 	background: #f9a center image-url('bg.jpg') no-repeat ;
-// 	background-size: cover ;
-// }
+#background::before {
+	content: '' ;
+	position: fixed ;
+	top: 0 ;
+	left: 0 ;
+	width: 100vw ;
+	height: 100vh ;
+	z-index: -1000 ;
+	background: #f9a center image-url('bg.jpg') no-repeat ;
+	background-size: cover ;
+}
 
 .site-wrapper {
 	min-height: 100% ;
@@ -124,4 +121,27 @@ html, body {
 
 .text-shadow-2 {
 	text-shadow: 0 2px 4px #222f ;
+}
+
+.flex-centre {
+	display: flex ;
+	width: 100vw ;
+	height: 100vh ;
+	justify-content: center ;
+	align-items: center ;
+}
+
+.field_with_errors {
+	color: #f55 ;
+	animation: shaky 0.075s linear 3 1s ;
+}
+
+@keyframes shaky {
+	0%, 100% {
+		transform: rotate(0deg) ;
+	}
+
+	50% {
+		transform: rotate(5deg) ;
+	}
 }

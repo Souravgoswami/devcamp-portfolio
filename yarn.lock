@@ -3271,6 +3271,11 @@ graceful-fs@^4.1.11, graceful-fs@^4.1.15, graceful-fs@^4.1.2, graceful-fs@^4.2.2
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.3.tgz#4a12ff1b60376ef09862c2093edd908328be8423"
   integrity sha512-a30VEBm4PEdx1dRB7MFK7BejejvCvBronbLjht+sHuGYj8PHs7M/5Z+rt5lw551vZ7yfTCj4Vuyy3mSJytDWRQ==
 
+gritter@^1.7.4:
+  version "1.7.4"
+  resolved "https://registry.yarnpkg.com/gritter/-/gritter-1.7.4.tgz#cdb83982bd19e2ce93be73971e1320a3261133e1"
+  integrity sha1-zbg5gr0Z4s6TvnOXHhMgoyYRM+E=
+
 handle-thing@^2.0.0:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/handle-thing/-/handle-thing-2.0.1.tgz#857f79ce359580c340d43081cc648970d0bb234e"

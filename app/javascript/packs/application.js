@@ -20,7 +20,9 @@ $(
 	}
 )
 
-// ; (ctx => ctx.keys().forEach(ctx))(require.context('.', true, /\.js$/))
-
 import "controllers"
 import 'cocoon-js'
+import './notify-send.js'
+
+// Load all the js file in a directory...
+// ; (ctx => ctx.keys().forEach(ctx))(require.context('.', true, /\.js$/))

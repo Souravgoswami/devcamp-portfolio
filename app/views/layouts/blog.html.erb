@@ -9,11 +9,16 @@
 		<%= csp_meta_tag %>
 
 		<%= stylesheet_link_tag 'buttons', media: 'all', 'data-turbolinks-track': 'reload' %>
+		<%= stylesheet_link_tag 'notify-send', media: 'all', 'data-turbolinks-track': 'reload' %>
 		<%= stylesheet_link_tag 'blogs', media: 'all', 'data-turbolinks-track': 'reload' %>
 		<%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+		<%= javascript_pack_tag 'notify-send', %s(data-turbolinks-track) => 'reload' %>
+		<%= javascript_pack_tag 'file', %s(data-turbolinks-track) => 'reload' %>
 	</head>
 
 	<body>
+		<script>notify('hihi')</script>
+		<%= flash[:params] %>
 		<%= render('shared/blog_nav') %>
 		<%= render('shared/blog_masthead') %>
 
