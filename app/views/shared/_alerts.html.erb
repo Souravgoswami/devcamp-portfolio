@@ -1,0 +1,7 @@
+<% if flash[:alert] %>
+	<script>notify("<%= flash[:alert] %>", 'Ok')</script>
+<% elsif flash[:error] %>
+	<script>notify("<%= flash[:error] %>", 'Dismiss')</script>
+<% elsif flash[:notice] %>
+	<script>notify("<%= flash[:notice] %>", 'Ok')</script>
+<% end %>
