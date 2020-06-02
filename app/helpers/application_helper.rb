@@ -41,4 +41,14 @@ module ApplicationHelper
 	def active?(path)
 		'active' if current_page? path
 	end
+
+	def alerts
+		if alert = (flash[:alert] || flash[:error] || flash[:notice])
+			alert_generator(alert).html_safe
+		end
+	end
+
+	def alert_generator(msg = '', button_message = 'Ok')
+		%(<script>notify("#{msg}", "#{button_message}")</script>).html_safe
+	end
 end

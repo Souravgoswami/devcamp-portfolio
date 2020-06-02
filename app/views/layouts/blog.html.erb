@@ -13,12 +13,11 @@
 		<%= stylesheet_link_tag 'blogs', media: 'all', 'data-turbolinks-track': 'reload' %>
 		<%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 		<%= javascript_pack_tag 'notify-send', %s(data-turbolinks-track) => 'reload' %>
-		<%= javascript_pack_tag 'file', %s(data-turbolinks-track) => 'reload' %>
 	</head>
 
 	<body>
-		<script>notify('hihi')</script>
-		<%= flash[:params] %>
+		<%= alerts %>
+
 		<%= render('shared/blog_nav') %>
 		<%= render('shared/blog_masthead') %>
 

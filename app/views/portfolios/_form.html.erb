@@ -1,15 +1,10 @@
 <%= form_with(model: portfolio_item, local: true) do |f| %>
 	<% if portfolio_item.errors.any? %>
-			<script>
-				notify("<%= pluralize(portfolio_item.errors.count, 'error') %> prohibited this portfolio_item from being saved", 'Ok')
-			</script>
+		<%= alert_generator(pluralize(portfolio_item.errors.count, 'error') + ' prohibited this portfolio item from begin saved', 'Got it!') %>
 
-				<% portfolio_item.errors.full_messages.each do |message| %>
-					<script>
-						notify("<%= message %>", 'Ok')
-					</script>
-				<% end %>
-			</ul>
+		<% portfolio_item.errors.full_messages.each do |message| %>
+			<%= alert_generator(message) %>
+		<% end %>
 	<% end %>
 
 	<div class="row">
