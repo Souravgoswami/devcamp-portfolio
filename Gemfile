@@ -44,3 +44,5 @@ gem "carrierwave-aws", "~> 1.5"
 gem "dotenv-rails", "~> 2.7"
 gem "cocoon", "~> 1.2"
 gem "gritter", "~> 1.2"
+
+gem "twitter", "~> 7.0"

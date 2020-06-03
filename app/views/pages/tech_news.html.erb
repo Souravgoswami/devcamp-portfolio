@@ -1,0 +1,19 @@
+<%= render 'shared/cover_layout' do %>
+	<div class="yield-wrapper">
+		<div class="w-50">
+			<h1 class="head-drop-shadowed">Rails News</h1>
+
+			<div class="row">
+				<% @tweets.each do |tweet| %>
+					<div class="col-md-6">
+						<div class="tech-news">
+							<div class="card">
+								<%= twitter_parser(tweet) %>
+							</div>
+						</div>
+					</div>
+				<% end %>
+			</div>
+		</div>
+	</div>
+<% end %>
