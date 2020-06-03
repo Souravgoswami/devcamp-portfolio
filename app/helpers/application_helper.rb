@@ -25,8 +25,8 @@ module ApplicationHelper
 	end
 
 	def nav_items(style, tag_type)
-		[root_path, about_me_path, contact_path, blogs_path, portfolios_path].zip(
-			'Home * About Me * Contact * Blogs * Portfolios'.split(?*)
+		[root_path, about_me_path, contact_path, tech_news_path, blogs_path, portfolios_path].zip(
+			'Home * About Me * Contact * Tech News * Blogs * Portfolios'.split(?*)
 		).map do |x|
 			<<~EOF.tap(&:strip!)
 				<#{tag_type}><a href="#{x[0]}" class="#{style} #{active?(x[0])}">#{x[1]}</a></#{tag_type}>

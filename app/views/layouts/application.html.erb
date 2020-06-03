@@ -19,13 +19,13 @@
     <%= alerts %>
 
     <%= render 'shared/application_nav', location: 'top' %>
-    <div class="video-wrapper background">
+    <div class="video-wrapper background" style="background-color: #222 ;">
       <%= video_tag(
           'busy_morning_street.mp4', id: 'background',
           autoplay: true,
           loop: true,
           muted: true,
-          poster: 'bg.jpg'
+          poster: 'bg.webp'
         )
       %>
       </div>
