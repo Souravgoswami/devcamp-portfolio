@@ -8,10 +8,25 @@
 
 			<p><%= @blog.body %></p>
 
-			<nav class="blog-pagination">
-				<a class="btn btn-outline-primary" href="#">Older</a>
-				<a class="btn btn-outline-secondary disabled" href="#">Newer</a>
-			</nav>
+			<%# Start of comment form %>
+				<% unless current_user.is_a?(GuestUser) %>
+					<%= form_for(@comment, url: '#') do |f| %>
+						<div class="form-group">
+							<%= f.label :content %>
+							<%= f.text_area :content, class: 'form-control' %>
+						</div>
+
+						<label class="btn-outline-primary-animated" data-content="Post Comment">
+							<%= f.submit '', style: 'display: none' %>
+						</label>
+					<% end %>
+				<% end %>
+			<%# End of comment form %>
+
+			<%# Start of comments %>
+				<%= render partial: 'comment', collection: @blog.comments %>
+
+			<%# End of comments %>
 		</div>
 	</div>
 	<%= link_to 'Back', blogs_path %>
