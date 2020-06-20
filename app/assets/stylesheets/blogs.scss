@@ -1,13 +1,13 @@
 body {
-	background-color: #fff ;
-	color: #0a0 ;
+	background-color: #fff !important ;
+	color: #0a0 !important ;
+  padding-top: 0 !important ;
+  margin-top: 0 !important ;
 }
 
 .bottom a {
 	color: #3eb ;
 }
-
-/* stylelint-disable selector-list-comma-newline-after */
 
 .blog-header {
   line-height: 1;
@@ -114,4 +114,9 @@ h1, h2, h3, h4, h5, h6 {
 
 .social-links li {
   font-size: 1.2em ;
+}
+
+.blogcrumb a {
+  font-size: 20px ;
+  margin: 0 4px ;
 }

@@ -9,6 +9,9 @@
 		<%= csrf_meta_tags %>
 		<%= csp_meta_tag %>
 
+		<%= favicon_link_tag 'favicons/favicon-main.png' %>
+
+		<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 		<%= stylesheet_link_tag 'portfolios', media: 'all', 'data-turbolinks-track': 'reload' %>
 		<%= stylesheet_link_tag 'buttons', media: 'all', 'data-turbolinks-track': 'reload' %>
 		<%= stylesheet_link_tag 'notify-send', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -22,8 +25,5 @@
 		<%= render('shared/portfolio_jumbotron') unless logged_in?(:site_admin) %>
 
 		<%= yield %>
-
-		<%= render('shared/portfolio_footer') %>
-		<%= source_helper('application') %>
 	</body>
 </html>

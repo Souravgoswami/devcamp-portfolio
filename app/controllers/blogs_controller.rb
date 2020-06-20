@@ -2,12 +2,18 @@ class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy, :toggle_status]
   layout 'blog'
   access all: [:show, :index], user: { except: [:destroy, :new, :create, :update, :edit, :toggle_status] }, site_admin: :all
+  before_action :set_sidebar_topics, except: [:create, :update, :destroy, :toggle_status]
 
   # GET /blogs
   # GET /blogs.json
   def index
     # @blogs = Blog.special_blogs
-    @blogs = Blog.page(params[:page]).per(5)
+    @blogs = if logged_in?(:site_admin)
+      Blog.recent.page(params[:page]).per(5)
+    else
+      Blog.published.recent.page(params[:page]).per(5)
+    end
+
     @page_title = "My Portfolio Blog".freeze
     # show random number of items
     # @blogs = Blog.limit(rand(1..3))
@@ -16,11 +22,15 @@ class BlogsController < ApplicationController
   # GET /blogs/1
   # GET /blogs/1.json
   def show
-    @blog = Blog.includes(:comments).friendly.find(params[:id])
-    @comment = Comment.new
+    if logged_in?(:site_admin) || @blog.published?
+      @blog = Blog.includes(:comments).friendly.find(params[:id])
+      @comment = Comment.new
 
-    @page_title = @blog.title
-    @seo_keywords = @blog.body &.split &.first(12) &.join(' ')
+      @page_title = @blog.title
+      @seo_keywords = @blog.body &.split &.first(12) &.join(' ')
+    else
+      redirect_to blogs_path, notice: 'You are not authorized to view this page'
+    end
   end
 
   # GET /blogs/new
@@ -88,9 +98,12 @@ class BlogsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def blog_params
       # config.action_controller.permit_all_parameters = true
-      # Can be added
-      # to /config/application.rb
+      # Can be added to /config/application.rb
       # In order to remove permit() with the cost of compromising security
-      params.require(:blog).permit(:title, :body, :topic_id)
+      params.require(:blog).permit(:title, :body, :topic_id, :status)
+    end
+
+    def set_sidebar_topics
+      @sidebar_topics = Topic.with_blogs
     end
 end

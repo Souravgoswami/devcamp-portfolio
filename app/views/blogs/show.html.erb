@@ -1,17 +1,39 @@
 <main role="main" class="container">
 	<div class="row">
 		<div class="col-md-8 blog-main">
-			<h2><%= @blog.title %></h2>
+			<nav aria-label="breadcrumb">
+				<ol class="breadcrumb">
+					<li class="breadcrumb-item"><%= link_to 'Home', root_path %></li>
+					<li class="breadcrumb-item"><%= link_to @blog.topic.title, topic_show_path(@blog.topic) %></li>
+					<li class="breadcrumb-item active"><%= link_to @blog.title %></li>
+				</ol>
+			</nav>
+
+			<h2 class="float-left"><%= @blog.title %></h2>
 			<% if logged_in?(:site_admin) %>
-				<%= link_to 'Edit', edit_blog_path(@blog) %>
+				<span class="float-right">
+					<%= link_to edit_blog_path(@blog) do %>
+						<i class="far fa-edit"></i>
+					<% end %>
+
+					<%= link_to blog_path(@blog), method: :delete, data: { confirm: 'Are you sure to delete this post? This is irreversible.' } do %>
+						<i class="fas fa-trash"></i>
+					<% end %>
+				</span>
 			<% end %>
 
+			<br>
+			<br>
+
+			<p>
+				<%= markdown @blog.body %>
+			</p>
+
+			<br>
+			<%= @blog.topic.title %>
+
 			<p><%= @blog.body %></p>
-
-			<%# Start of comment form %>
 			<%= render 'comments/comment_form' %>
-			<%# End of comment form %>
-
 			<%= render partial: 'comment', collection: @blog.comments %>
 		</div>
 	</div>

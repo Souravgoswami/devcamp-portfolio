@@ -13,10 +13,11 @@ module ApplicationHelper
 		content_tag(:div, "My Content Tag Helper", class: 'my-content-tag-helper-class')
 	end
 
-	def source_helper(layout_name)
+	def source_helper(style = '')
 		unless session[:source].to_s.strip.freeze.empty?
-			greeting =  "Thanks for visiting me from #{session[:source]} and you are on the #{layout_name} layout!".freeze
-  			content_tag(:p, greeting, class: 'source-greeting')
+			greeting =  "<span>Thanks for visiting me from #{session[:source]}. Please feel feel to #{link_to '', contact_path, 'data-content': 'contact me', class: 'link'}</span>"
+			greeting.<<(link_to 'x', remove_session_source_portfolios_path, remote: true, class: "dismiss-source", method: 'patch')
+			content_tag(:p, greeting.html_safe, class: "#{style} source-greeting")
 		end
 	end
 

@@ -12,6 +12,9 @@
 end
 puts '3 topics created!'
 
+User.create!(email: 'a@a.a', name: 'aa aa', password: 'aaaaaa', role: 'site_admin')
+User.create!(email: 'b@b.b', name: 'bb bb', password: 'bbbbbb', role: '')
+
 10.times do |x|
 	Blog.create!(
 		title: "My Blog Post #{ x.next }",
