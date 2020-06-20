@@ -1,17 +1,28 @@
 <%= render 'shared/cover_layout' do %>
 	<div class="yield-wrapper">
-		<h1 class="head-drop-shadowed">Hello!</h1>
-		<h3 class="head-drop-shadowed">Would you like to work together?</h3>
-		<hr>
+		<div class="app-card-container">
+			<div class="card">
+				<div class="centrify">
+					<h1 class="head-drop-shadowed">Hello!</h1>
+					<h3 class="head-drop-shadowed">Would you like to work together?</h3>
+				</div>
+				<hr>
 
-		<div class="row text-shadow-2">
-			<div class="col-md-4">
-				<p><%= number_with_delimiter 123456789 %></p>
-				<p><%= link_to 'Email', 'mailto:sg97@protonmail.com' %></p>
-			</div>
+				<div class="row text-shadow-2">
+					<div class="col-md-4">
+						&#x1F4DE; Call me: <%= number_to_phone '+91 8338383883', { delimiter: ?\s } %>
+						&#x1f584; Email: sg97@pm.me
 
-			<div class="col-md-8">
-				<iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10264.475300694867!2d88.39249290644771!3d22.66028737884824!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f89c2cc26dce7b%3A0x96394937c2ddaee0!2sBelgharia%20Station%20Rd%2C%20Kolkata%2C%20West%20Bengal!5e0!3m2!1sen!2sin!4v1589039161655!5m2!1sen!2sin" allowfullscreen="true" tabindex="0"></iframe>
+						<p>
+							<%= link_to '', 'mailto:sg97@protonmail.com', class: 'btn-outline-primary-animated', 'data-content': %[ &#x1f584; Email Me ].html_safe %>
+						</p>
+					</div>
+
+					<div class="col-md-8">
+						<iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10264.475300694867!2d88.39249290644771!3d22.66028737884824!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f89c2cc26dce7b%3A0x96394937c2ddaee0!2sBelgharia%20Station%20Rd%2C%20Kolkata%2C%20West%20Bengal!5e0!3m2!1sen!2sin!4v1589039161655!5m2!1sen!2sin" allowfullscreen="true" tabindex="0"></iframe>
+					</div>
+				</div>
 			</div>
+		</div>
 	</div>
 <% end %>

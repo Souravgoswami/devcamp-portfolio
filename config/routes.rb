@@ -1,8 +1,17 @@
 Rails.application.routes.draw do
+  # resources :topics, only: [:index, :show]
+  get 'topics', to: 'topics#index'
+  get 'topics/:id', to: 'topics#show', as: 'topic_show'
+
+  resources :comments
   devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'register' }
   resources :portfolios, except: [:show] do
     member do
       patch :move
+    end
+
+    collection do
+      patch :remove_session_source
     end
   end
 
@@ -25,6 +34,8 @@ Rails.application.routes.draw do
       patch :toggle_status
     end
   end
+
+  mount ActionCable.server => '/cable'
 
   root to: 'pages#home'
 end

@@ -7,6 +7,10 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+   <%# <link href="https://fonts.googleapis.com/css2?family=Alice&display=swap" rel="stylesheet"> %>
+
+    <%= favicon_link_tag 'favicons/favicon-main.png' %>
+
     <meta name="keywords" content="<%= @seo_keywords %>">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 		<%= stylesheet_link_tag 'buttons', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -33,10 +37,7 @@
     <div class="site-wrapper">
       <div class="site-wrapper-inner">
         <div class="cover-container">
-
           <%= yield %>
-
-          <%= source_helper('application') %>
         </div>
       </div>
     </div>

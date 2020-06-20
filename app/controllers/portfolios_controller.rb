@@ -40,6 +40,13 @@ class PortfoliosController < ApplicationController
 		@portfolio_item.technologies.build
 	end
 
+	def remove_session_source
+		session[:source] = nil
+		respond_to do |r|
+			r.html { redirect_to portfolios_path }
+		end
+	end
+
 	def update
 		respond_to do |fmt|
 			if @portfolio_item.update(portfolio_params)

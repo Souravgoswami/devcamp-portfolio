@@ -1,0 +1,19 @@
+<% if logged_in?(:site_admin) %>
+	<nav class="breadcrumb blogcrumb">
+		<%= link_to toggle_status_blog_path(blog), method: :patch do %>
+			<% if blog.published? %>
+				<i class="fas fa-toggle-on" style="color: #55f"></i>
+			<% else %>
+				<i class="fas fa-toggle-off" style="color: #f55"></i>
+			<% end %>
+		<% end %>
+
+		<%= link_to edit_blog_path(blog), method: :get do %>
+			<i class="fas fa-edit"></i>
+		<% end %>
+
+		<%= link_to blog, method: :delete, data: { confirm: 'Are you sure to delete this item? This is irreversible!' } do %>
+			<i class="fas fa-trash-alt"></i>
+		<% end %>
+	</nav>
+<% end %>

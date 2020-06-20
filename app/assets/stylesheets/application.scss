@@ -1,3 +1,10 @@
+@font-face {
+	font-family: 'Alice' ;
+	font-style: normal ;
+	font-weight: 400 ;
+	src: local('Alice Regulaar'), local('Alice-Regulaar'), font-url('Alice') format('woff2') ;
+}
+
 html, body {
 	min-height: 100% ;
 	color: #fff !important ;
@@ -6,6 +13,7 @@ html, body {
 body {
 	padding-top: 65px !important ;
 	margin-top: 100px !important ;
+	font-family: 'Alice' !important ;
 }
 
 .mastfoot .inner p {
@@ -19,15 +27,17 @@ body {
 	display: flex ;
 	align-items: center ;
 	flex-direction: column ;
-	justify-content: center ;
-	margin-bottom: 5vh ;
 	width: 100% ;
-	min-height: 100vh ;
+	margin-bottom: 5vh ;
+	min-height: 60vh ;
 	text-align: center ;
 }
 
 .card {
 	color: #000 !important ;
+	background-color: #fffa !important ;
+	min-width: 100% !important ;
+	padding: 5% ;
 	text-align: left ;
 }
 
@@ -60,7 +70,6 @@ body {
 .lead {
 	text-align: left ;
 	position: relative ;
-	text-overflow: ellipsis ;
 	white-space: wrap ;
 	display: inline-block ;
 }
@@ -115,10 +124,6 @@ body {
 	text-shadow: 0 1px 0 #efefef84,
 				0 2px 0 #efefef84,
 				0 8px 4px #00000044 ;
-}
-
-.text-shadow-2 {
-	text-shadow: 0 2px 4px #222f ;
 }
 
 .flex-centre {
@@ -179,4 +184,85 @@ body {
 			color: #55f ;
 		}
 	}
+}
+
+.link {
+	position: relative ;
+	content: attr(data-content) ;
+	display: inline-block ;
+	overflow: hidden ;
+	vertical-align: middle ;
+
+	&::after {
+		content: attr(data-content) ;
+		color: #0a0 ;
+		position: relative ;
+		width: 100% ;
+		height: 100% ;
+		text-decoration: none ;
+		display: inline-block ;
+		transition: all 0.25s ease ;
+		transform: translate(0) ;
+	}
+
+	&::before {
+		content: attr(data-content) ;
+		color: #fa0 ;
+		position: absolute ;
+		top: 0 ;
+		bottom: 0 ;
+		width: 100% ;
+		height: 100% ;
+		text-decoration: none ;
+		opacity: 0 ;
+		transition: all 0.25s ease ;
+		transform: translate(-200%) ;
+	}
+
+	&:hover {
+		&::after {
+			opacity: 0 ;
+			transform: translate(100%) ;
+		}
+
+		&::before {
+			opacity: 1 ;
+			transform: translate(0) ;
+		}
+	}
+
+	&:active, &:focus {
+		&::before {
+			color: #55f ;
+		}
+	}
+}
+
+.source-greeting {
+	color: #80f ;
+	display: block ;
+}
+
+.app-card-container {
+	overflow: hidden ;
+	display: block ;
+	width: 50vw ;
+	overflow-wrap: break-word ;
+}
+
+.centrify {
+	height: 100% ;
+	display: flex ;
+	align-items: center ;
+	flex-direction: column ;
+	justify-content: center ;
+}
+
+.card-content {
+	margin-top: 50% ;
+}
+
+.image {
+	height: 100% ;
+	object-fit: cover ;
 }

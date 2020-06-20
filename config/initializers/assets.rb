@@ -6,3 +6,5 @@ Rails.application.config.assets.precompile.concat(%w[
 	blogs.scss
 	portfolios.scss
 ])
+
+# Rails.application.config.assets.paths << Rails.root.join('app', 'assets', 'all-fonts')

@@ -226,6 +226,8 @@ GEM
     rb-inotify (0.10.1)
       ffi (~> 1.0)
     rdoc (6.2.1)
+    redcarpet (3.5.0)
+    redis (4.1.4)
     reline (0.1.4)
       io-console (~> 0.5)
     responders (3.0.1)
@@ -304,6 +306,7 @@ DEPENDENCIES
   carrierwave (~> 2.1)
   carrierwave-aws (~> 1.5)
   cocoon (~> 1.2)
+  coderay (~> 1.1)
   devcamp_view_tool123456 (~> 0.1.0)
   devise (~> 4.7, >= 4.7.1)
   dotenv-rails (~> 2.7)
@@ -320,6 +323,8 @@ DEPENDENCIES
   puma (~> 4.3.5)
   rails (~> 6.0.2, >= 6.0.2.2)
   rdoc
+  redcarpet (~> 3.5)
+  redis (~> 4.1)
   sass-rails (>= 6)
   spring
   spring-watcher-listen (~> 2.0.0)

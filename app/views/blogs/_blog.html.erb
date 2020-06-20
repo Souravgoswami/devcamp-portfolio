@@ -1,5 +1,6 @@
 <div class="blog-post">
 	<h2 class="blog-post-title"><%= link_to blog.title.to_s.capitalize, blog %></h2>
+	<%= render partial: 'blogs/admin_actions', locals: { blog: blog } %>
 	<p class="blog-post-meta">Published <%= distance_of_time_in_words(blog.created_at, Time.now) %> ago</p>
 	<p class="blog-post-meta">By <a href="#">Mark</a>
 
@@ -7,15 +8,7 @@
 		<td><%= link_to 'Show', blog %></td>
 	</p>
 
-	<% if logged_in?(:site_admin) %>
-		<p class="blog-post-meta">
-			<%= link_to 'Edit', edit_blog_path(blog) %> /
-			<%= link_to blog.status.to_s.capitalize, toggle_status_blog_path(blog) %> /
-			<%= link_to 'Delete Post', blog, method: :delete, data: { confirm: 'Are you sure?' } %>
-		</p>
-	<% end %>
-
 	<p>
-		<%= blog.body %>
+		<%= markdown blog.body %>
 	</p>
 </div>

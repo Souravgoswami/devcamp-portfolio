@@ -1,17 +1,94 @@
 <%= render 'shared/cover_layout' do %>
-	<div class="row">
-		<div class="col-md-4">
-			<%= image_tag 'dog.jpg', width: '200px', class: 'img-fluid img-thumbnail rounded shadow' %>
-		</div>
+	<div class="app-card-container">
+		<div class="card">
+			<div class="row">
+				<div class="col-md-6">
+					<div class="centrify">
+						<h3>Sourav Goswami</h3>
+						<div class="image">
+							<%= image_tag 'dog.jpg', height: '100%', class: 'img-fluid img-thumbnail rounded shadow' %>
+						</div>
 
-		<div class="col-md-8">
-			<p class="lead">
-				My name is sourav goswami.
-			</p>
+						<div class="skills">
+							Skills:
+							<%= @skills.map { |x| x.title }.join(', ') %>
 
-			<center>
-				<%= link_to 'Learn More', about_me_path, class: 'btn btn-success', id: 'learn-more' %></p>
-			</center>
+							<% @skills.each_with_index do |x, i| %>
+								<h4><%= x.title %></h4>
+
+								<div class="progress">
+									<div class="progress-bar progress-bar-striped bg-<%= %w(danger primary success warning info)[i] %>"
+										role="progressbar",
+										aria-valuenow="<%= x.percent_utilized %>",
+										aria-valuemax="100",
+										aria-valuemin="0",
+										style="width: <%= x.percent_utilized %>%"
+									><%= x.percent_utilized %>%
+									</div>
+								</div>
+
+
+							<% end %>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="col-md-6">
+					<h3 style="visibility: hidden">Sourav Goswami</h3>
+					<p class="lead">
+						My name is sourav goswami.
+					</p>
+
+					<p>
+						<button
+							class="btn-outline-danger-animated",
+							data-toggle="collapse",
+							data-target="#jobHistory",
+							aria-expanded="false",
+							aria-controller="jobHistory",
+							data-content="Job History &#x1F783;".html_safe
+						></button>
+
+						<button
+							class="btn-outline-primary-animated",
+							data-toggle="collapse",
+							data-target="#education",
+							aria-expanded="false",
+							aria-controller="education",
+							data-content="Education &#x1F783;".html_safe
+						></button>
+
+						<p>
+							<div class="collapse" id="jobHistory">
+								<div class="card card-block card-jobs mt-2">
+									Job 1
+								</div>
+
+								<div class="card card-block mt-2">
+									Job 2
+								</div>
+							</div>
+						</p>
+
+						<p>
+							<div class="collapse" id="education">
+								<div class="card card-block card-jobs mt-2">
+									Education 1
+								</div>
+
+								<div class="card card-block mt-2">
+									Education 2
+								</div>
+							</div>
+						</p>
+					</p>
+				</div>
+			</div>
+
+			<div class="centrify mt-5">
+				<%= link_to '', contact_path, class: 'btn-outline-success-animated', id: 'learn-more', %s(data-content) => 'Contact' %></p>
+			</div>
 		</div>
 	</div>
 <% end %>
